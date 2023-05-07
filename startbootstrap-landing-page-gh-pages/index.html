@@ -24,38 +24,75 @@
                     <div class="col-xl-6">
                         <div class="text-center text-white">
                             <!-- Page heading-->
-                            <h1 class="mb-5">Primary Screening for Potential Smoker</h1>
-                            <!-- Signup form-->
-                            <!-- * * * * * * * * * * * * * * *-->
-                            <!-- * * SB Forms Contact Form * *-->
-                            <!-- * * * * * * * * * * * * * * *-->
-                            <!-- This form is pre-integrated with SB Forms.-->
-                            <!-- To make this form functional, sign up at-->
-                            <!-- https://startbootstrap.com/solution/contact-forms-->
-                            <!-- to get an API token!-->
-                            <form class="form-subscribe" id="contactForm" data-sb-form-api-token="API_TOKEN">
-                                <!-- Email address input-->
+                            <h1 class="mb-5">General Practice Smoking-status Assessment and Referral Tool (GP-SmART)</h1>
+                            
+
+                            <form class="form-subscribe" id="screeningForm" action="result", method="POST">
+                                <!--Age input-->
                                 <div class="row">
                                     <div class="col">
-                                        <input class="form-control form-control-lg" id="Age" type="age" placeholder="Age" data-sb-validations="required" />
-                                        <input class="form-control form-control-lg" id="Gender" type="Gender" placeholder="Gender" data-sb-validations="required" />
-                                        <input class="form-control form-control-lg" id="Height" type="Height" placeholder="Height" data-sb-validations="required" />
-                                        <input class="form-control form-control-lg" id="Systolic Blood Pressure" type="Systolic Blood Pressure" placeholder="Systolic Blood Pressure" data-sb-validations="required" />
-                                        <input class="form-control form-control-lg" id="Diastolic blood pressure" type="Diastolic blood pressure" placeholder="Diastolic blood pressure" data-sb-validations="required" />
-                                        <input class="form-control form-control-lg" id="Pulse Rate" type="Pulse Rate" placeholder="Pulse Rate" data-sb-validations="required" />
-                                        <div class="col-auto"><button class="btn btn-primary btn-lg disabled" id="submitButton" type="submit">Submit</button></div>
+                                        <input class="form-control form-control-lg" name="Age" type="number" placeholder="Age" data-sb-validations="required" />
+                                    </div>
                                 </div>
+
+                                <!--Gender input-->
+                                <div class="row">
+                                    <div class = "col">
+                                        <select class="form-control form-control-lg" name="Gender" data-sb-validations="required">
+                                            <option value="" selected disabled hidden>Gender</option>
+                                            <option value="male">Male</option>
+                                            <option value="female">Female</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <!--Height input-->
+                                <div class="row">
+                                    <div class="col">
+                                        <input class="form-control form-control-lg" name="Height" type="number" placeholder="Height (cm)" required />
+                                    </div>
+                                </div>
+                                
+                                <!--Systolic blood pressure input-->
+                                <div class="row">
+                                    <div class="col">
+                                        <input class="form-control form-control-lg" name="Systolic blood pressure" type="number" placeholder="Systolic blood pressure (mmHg)" required />
+                                    </div>
+                                </div>
+                                
+                                 <!--Diastolic blood pressure input-->
+                                <div class="row">
+                                    <div class="col">
+                                        <input class="form-control form-control-lg" name="Diastolic blood pressure" type="number" placeholder="Diastolic blood pressure (mmHg)" required />
+                                    </div>
+                                </div>
+                                        
+                                <!--Pulse rate blood pressure input-->      
+                                <div class="row">
+                                    <div class="col">
+                                        <input class="form-control form-control-lg" name="Pulse rate" type="number" placeholder="Pulse rate (bpm)" required />
+                                    </div>
+                                </div>
+                                
+                                <div class="row">
+                                    <div class="d-flex justify-content-center">
+                                        <button class="btn btn-primary btn-lg" type="submit">Submit</button>
+                                    </div>
+                                </div>
+                            </form>                           
+                            
+
                                 <!-- Submit success message-->
                                 <!---->
                                 <!-- This is what your users will see when the form-->
                                 <!-- has successfully submitted-->
-                                <div class="d-none" id="submitSuccessMessage">
+                                <!-- <div class="d-none" id="submitSuccessMessage">
                                     <div class="text-center mb-3">
                                         <div class="fw-bolder">Form submission successful!</div>
                                         <p>To activate this form, sign up at</p>
                                         <a class="text-white" href="https://startbootstrap.com/solution/contact-forms">https://startbootstrap.com/solution/contact-forms</a>
                                     </div>
-                                </div>
+                                </div> -->
                                 <!-- Submit error message-->
                                 <!---->
                                 <!-- This is what your users will see when there is-->
