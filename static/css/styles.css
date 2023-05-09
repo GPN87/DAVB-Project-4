@@ -2151,7 +2151,7 @@ textarea.form-control-lg {
   line-height: 1.5;
   color: #212529;
   background-color: #fff;
-  background-image: url("medical.jpeg");
+  background-image: url("../assets/img/bg-masthead.jpg");
   background-repeat: no-repeat;
   background-position: right 1rem center;
   background-size: 16px 12px;
@@ -10841,7 +10841,7 @@ textarea.form-control-lg {
 header.masthead {
   position: relative;
   background-color: #343a40;
-  background-image: url("../medical.jpg");
+  background-image: url("../assets/medical.jpg");
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;

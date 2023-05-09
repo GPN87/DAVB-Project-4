@@ -7,18 +7,18 @@
         <meta name="author" content="" />
         <title>Smoker Detection</title>
         <!-- Favicon-->
-        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='assets/favicon.ico') }}" />
         <!-- Bootstrap icons-->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" type="text/css" />
         <!-- Google fonts-->
         <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css" />
         <!-- Core theme CSS (includes Bootstrap)-->
-        <link href="css/styles.css" rel="stylesheet" />
+        <link href="{{ url_for('static', filename='css/styles.css') }}" rel="stylesheet" />
     </head>
     <body>
        
         <!-- Masthead-->
-        <header class="masthead">
+        <header class="masthead" data-background="{{ url_for('static', filename='images/medical.jpg') }}">
             <div class="container position-relative">
                 <div class="row justify-content-center">
                     <div class="col-xl-6">
@@ -31,17 +31,17 @@
                                 <!--Age input-->
                                 <div class="row">
                                     <div class="col">
-                                        <input class="form-control form-control-lg" name="Age" type="number" placeholder="Age" data-sb-validations="required" />
+                                        <input class="form-control form-control-lg" name="age" type="number" placeholder="Age" data-sb-validations="required" />
                                     </div>
                                 </div>
 
                                 <!--Gender input-->
                                 <div class="row">
                                     <div class = "col">
-                                        <select class="form-control form-control-lg" name="Gender" data-sb-validations="required">
+                                        <select class="form-control form-control-lg" name="gender" data-sb-validations="required">
                                             <option value="" selected disabled hidden>Gender</option>
-                                            <option value="male">Male</option>
-                                            <option value="female">Female</option>
+                                            <option value="1">Male</option>
+                                            <option value="0">Female</option>
                                         </select>
                                     </div>
                                 </div>
@@ -49,28 +49,28 @@
                                 <!--Height input-->
                                 <div class="row">
                                     <div class="col">
-                                        <input class="form-control form-control-lg" name="Height" type="number" placeholder="Height (cm)" required />
+                                        <input class="form-control form-control-lg" name="height(cm)" type="number" placeholder="Height (cm)" required />
                                     </div>
                                 </div>
                                 
                                 <!--Systolic blood pressure input-->
                                 <div class="row">
                                     <div class="col">
-                                        <input class="form-control form-control-lg" name="Systolic blood pressure" type="number" placeholder="Systolic blood pressure (mmHg)" required />
+                                        <input class="form-control form-control-lg" name="systolic" type="number" placeholder="Systolic blood pressure (mmHg)" required />
                                     </div>
                                 </div>
                                 
                                  <!--Diastolic blood pressure input-->
                                 <div class="row">
                                     <div class="col">
-                                        <input class="form-control form-control-lg" name="Diastolic blood pressure" type="number" placeholder="Diastolic blood pressure (mmHg)" required />
+                                        <input class="form-control form-control-lg" name="hemoglobin" type="number" placeholder="Diastolic blood pressure (mmHg)" required />
                                     </div>
                                 </div>
                                         
                                 <!--Pulse rate blood pressure input-->      
                                 <div class="row">
                                     <div class="col">
-                                        <input class="form-control form-control-lg" name="Pulse rate" type="number" placeholder="Pulse rate (bpm)" required />
+                                        <input class="form-control form-control-lg" name="triglyceride" type="number" placeholder="Pulse rate (bpm)" required />
                                     </div>
                                 </div>
                                 
@@ -79,7 +79,9 @@
                                         <button class="btn btn-primary btn-lg" type="submit">Submit</button>
                                     </div>
                                 </div>
-                            </form>                           
+                            </form>  
+                            <button type="button" class="btn btn-primary btn-lg" onclick="window.location.href='/smoker'">Take me to smoker</button>
+                            <button type="button" class="btn btn-primary btn-lg" onclick="window.location.href='/non-smoker'">Take me to non-smoker</button>                         
                             
 
                                 <!-- Submit success message-->
@@ -145,7 +147,7 @@
         <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
         <!-- Core theme JS-->
-        <script src="js/scripts.js"></script>
+        <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
         <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
         <!-- * *                               SB Forms JS                               * *-->
         <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->

@@ -7,6 +7,8 @@ import datetime as dt
 import requests
 import webbrowser
 
+app=Flask(__name__, static_folder='static')
+
 #WEB ROUTES
 @app.route('/')
 def index():
@@ -23,9 +25,9 @@ def non_smoker():
 #POST ROUTES
 @app.route('/result', methods=['POST'])
 def result():
-    model = joblib.load('model.joblib')
+    model = joblib.load('model2.joblib')
 
-    features = ['Age', 'Gender', 'Height', 'Weight', 'Systolic blood pressure', 'Diastolic blood pressure', 'Pulse rate']
+    features = ['age', 'gender', 'height(cm)', 'systolic', 'hemoglobin', 'triglyceride']
     input_features = [float(request.form[feature]) for feature in features]
     prediction = model.predict([input_features])
     is_smoker = bool(prediction)
@@ -33,7 +35,7 @@ def result():
     if is_smoker:
         return redirect(url_for('smoker'))
     else:
-        return redirect(url_for('non_smoker'))
+        return redirect(url_for('non-smoker'))
 
 if __name__ == '__main__':
     app.run(debug=True)
