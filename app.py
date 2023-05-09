@@ -18,9 +18,9 @@ def index():
 def smoker():
     return render_template('smoker.html')
 
-@app.route('/non-smoker')
+@app.route('/non_smoker')
 def non_smoker():
-    return render_template('non-smoker.html')
+    return render_template('non_smoker.html')
 
 #POST ROUTES
 @app.route('/result', methods=['POST'])
@@ -35,7 +35,7 @@ def result():
     if is_smoker:
         return redirect(url_for('smoker'))
     else:
-        return redirect(url_for('non-smoker'))
+        return redirect(url_for('non_smoker'))
 
 if __name__ == '__main__':
     app.run(debug=True)
