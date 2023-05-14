@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>Smoker Detection</title>
+        <title>GP-SmART</title>
         <!-- Favicon-->
         <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='assets/favicon.ico') }}" />
         <!-- Bootstrap icons-->
@@ -15,15 +15,33 @@
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="{{ url_for('static', filename='css/styles.css') }}" rel="stylesheet" />
     </head>
-    <body>
+    <body id="page-top">
+        <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav">
+            <div class="container">
+                
+                <a class="navbar-brand" > 
+                    <h1>GP-SmART</h1>
+                </a>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ms-auto">
+                        
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#about">About</a></li>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                
+            </div>
+        </nav>
        
         <!-- Masthead-->
-        <header class="masthead" data-background="{{ url_for('static', filename='images/medical.jpg') }}">
+        <header class="masthead" data-background="{{ url_for('static', filename='images/medical.jpg') }}"style="margin-top: -3rem;">
             <div class="container position-relative">
                 <div class="row justify-content-center">
                     <div class="col-xl-6">
                         <div class="text-center text-white">
                             <!-- Page heading-->
+                            <img src="{{ url_for('static', filename='images/GP-SmART.png') }}" alt="logo" width="150" height="150">
                             <h1 class="mb-5">General Practice Smoking-status Assessment and Referral Tool (GP-SmART)</h1>
                             
 
@@ -31,14 +49,14 @@
                                 <!--Age input-->
                                 <div class="row">
                                     <div class="col">
-                                        <input class="form-control form-control-lg" name="age" type="number" placeholder="Age" data-sb-validations="required" />
+                                        <input class="form-control form-control-lg" name="age" type="number" placeholder="Age" data-sb-validations="required" autocomplete="off"/>
                                     </div>
                                 </div>
 
                                 <!--Gender input-->
                                 <div class="row">
                                     <div class = "col">
-                                        <select class="form-control form-control-lg" name="gender" data-sb-validations="required">
+                                        <select class="form-control form-control-lg" name="gender" data-sb-validations="required" autocomplete="off">
                                             <option value="" selected disabled hidden>Gender</option>
                                             <option value="1">Male</option>
                                             <option value="0">Female</option>
@@ -49,39 +67,69 @@
                                 <!--Height input-->
                                 <div class="row">
                                     <div class="col">
-                                        <input class="form-control form-control-lg" name="height(cm)" type="text" placeholder="Height (cm)" required />
+                                        <input class="form-control form-control-lg" name="height(cm)" type="text" placeholder="Height (cm)" required autocomplete="off"/>
+                                    </div>
+                                </div>
+
+                                <!--Weight input-->
+                                <div class="row">
+                                    <div class="col">
+                                        <input class="form-control form-control-lg" name="weight(kg)" type="text" placeholder="Weight (kg)" required autocomplete="off"/>
                                     </div>
                                 </div>
                                 
                                 <!--Systolic blood pressure input-->
                                 <div class="row">
                                     <div class="col">
-                                        <input class="form-control form-control-lg" name="systolic" type="text" placeholder="systolic" required />
+                                        <input class="form-control form-control-lg" name="systolic" type="text" placeholder="Systolic Blood Pressure" required autocomplete="off"/>
                                     </div>
                                 </div>
-                                
-                                 <!--Diastolic blood pressure input-->
+  
+                                 <!--Hemoglobin input-->
                                 <div class="row">
                                     <div class="col">
-                                        <input class="form-control form-control-lg" name="hemoglobin" type="text" placeholder="hemoglobin" required />
+                                        <input class="form-control form-control-lg" name="hemoglobin" type="text" placeholder="Hemoglobin" required required autocomplete="off"/>
                                     </div>
                                 </div>
                                         
-                                <!--Pulse rate blood pressure input-->      
+                                <!--Triglyceride input-->      
                                 <div class="row">
                                     <div class="col">
-                                        <input class="form-control form-control-lg" name="triglyceride" type="text" placeholder="tryglyceride" required />
+                                        <input class="form-control form-control-lg" name="triglyceride" type="text" placeholder="Tryglyceride" required autocomplete="off"/>
+                                    </div>
+                                </div>
+
+                                <!--High-density Lipoprotein input-->
+                                <div class="row">
+                                    <div class="col">
+                                        <input class="form-control form-control-lg" name="HDL" type="text" placeholder="High-density Lipoprotein" required autocomplete="off"/>
+                                    </div>
+                                </div>
+
+                                <!--Serum Creatine input-->
+                                <div class="row">
+                                    <div class="col">
+                                        <input class="form-control form-control-lg" name="serum creatinine" type="text" placeholder="Serum Creatinine" required autocomplete="off"/>
                                     </div>
                                 </div>
                                 
+                                <!--GTP input-->
+                                <div class="row">
+                                    <div class="col">
+                                        <input class="form-control form-control-lg" name="Gtp" type="text" placeholder="Gamma-glutamyl Transpeptidase (GTP)" required autocomplete="off"/>
+                                    </div>
+                                </div>
+
                                 <div class="row">
                                     <div class="d-flex justify-content-center">
                                         <button class="btn btn-primary btn-lg" type="submit">Submit</button>
                                     </div>
                                 </div>
                             </form>  
-                            <button type="button" class="btn btn-primary btn-lg" onclick="window.location.href='/smoker'">Take me to smoker</button>
-                            <button type="button" class="btn btn-primary btn-lg" onclick="window.location.href='/non_smoker'">Take me to non-smoker</button>                         
+                            <button type="button" class="btn btn-primary btn-lg" onclick="window.location.href='/casual_smoker'">Take me to casual smoker</button>
+                            <button type="button" class="btn btn-primary btn-lg" onclick="window.location.href='/heavy_smoker'">Take me to heavy smoker</button>
+                            <button type="button" class="btn btn-primary btn-lg" onclick="window.location.href='/non_smoker'">Take me to non-smoker</button>
+                            <button class="btn btn-primary btn-lg" onclick="window.location.href='/dash/'">Data Visualisation Dashboard</button>                         
                             
 
                                 <!-- Submit success message-->

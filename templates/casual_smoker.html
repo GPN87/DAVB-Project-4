@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GP-SmART</title>
+    <!-- Bootstrap -->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='plugins/bootstrap/bootstrap.min.css') }}">
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/smokerstyle.css') }}" media="screen" />
+	<link rel="shortcut icon" href="{{ url_for('static', filename='assets/favicon.ico') }}" type="image/x-icon">
+	<link rel="icon" href="{{ url_for('static', filename='assets/favicon.ico') }}" type="image/x-icon">
+</head>
+<body>
+	<!-- header -->
+	<header class="banner overlay bg-cover" data-background="{{ url_for('static', filename='images/medical.jpg') }}">
+		
+		<!-- banner -->
+		<div class="container section">
+			<div class="row">
+				<div class="col-lg-8 text-center mx-auto">
+					<h1 class="text-white mb-3">General Practice Smoking-status Assessment and Referral Tool (GP-SmART)</h1>
+			
+
+				</div>
+			</div>
+		</div>
+
+	</header>
+    <section id="section1">
+        <h2 style="color:rgb(242, 95, 41);">Patient is likely a light or casual smoker</h2>
+       <p style="text-align: left"> GP-SmART has predicted the patient is likely a light or casual smoker.
+		In helping patients in quitting any smoking more effectively, every primary care provider should have some basic
+		knowledge of tobacco use and tobacco dependence – such as the impact of tobacco use; the benefits of
+		quitting tobacco use; and why people smoke and do not quit. The following information on the risk of
+		tobacco use, the benefits of quitting, the three challenges in quitting tobacco and effective coping skills
+		will help you deliver brief tobacco interventions.</p>
+		<p style="text-align: left;">Below are some web-based smoking brief intervention tools to help you to assist with brief interventions on smoking in a primary healthcare setting</p>
+		<h4>Brief Intervention tools for smoking cessation</h4>
+		<ul>
+			<li class="left-align"><a href="https://www1.racgp.org.au/ajgp/2020/august/smoking-cessation-1"><b>Clinical Practice Guidelines for Smoking Cessation:</b></a> These guidelines were developed by the Royal Australian College of General Practitioners and provide evidence-based recommendations for managing tobacco dependence in primary care settings. The guidelines include a section on brief interventions and provide guidance on how to deliver effective smoking cessation interventions in a primary care setting.</li>
+			<li class="left-align"><a href="https://tacklingsmoking.org.au/wp-content/uploads/sites/5/2016/05/5As-for-smoking-cessation-for-health-professionals.pdf"><b> The 5As Framework:</b></a> This is a web-based tool developed by the University of Ottawa that provides a framework for delivering brief smoking interventions in a primary care setting. The 5As Framework stands for <b><em>"Ask, Advise, Assess, Assist, and Arrange follow-up"</em></b> and provides guidance on how to deliver each step of the intervention.</li>
+			<li class="left-align"><a href="https://www.naquitline.org/page/QuitlineReferralPlatform"><b>Quitline Referral Platform</b></a> This is a web-based tool that allows healthcare providers to refer their patients to state or provincial quitlines. The platform includes customizable referral forms, patient educational materials, and tracking tools to help providers monitor patient progress.</li>
+		 </ul>
+		 <button type="button" class="btn btn-primary btn-lg" onclick="window.location.href='/'" style="display: block; margin: 0 auto;">Back to GP-SmART</button>
+    </section>
+
+	<!-- ** JS Plugins Needed for the Project ** -->
+	<!-- jquiry -->
+	<script type="text/javascript" src="{{url_for('static', filename='plugins/jquery/jquery-1.12.4.js') }}"></script>
+	<!-- Bootstrap JS -->
+	<script type="text/javascript" src="{{url_for('static', filename='plugins/bootstrap/bootstrap.min.js') }}"></script>
+
+    <!-- Our JS -->
+    <script type="text/javascript" src="{{url_for('static', filename='js/smoker.js') }}"></script>
+
+
+</body>
+</html>

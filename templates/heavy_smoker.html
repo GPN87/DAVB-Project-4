@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GP-SmART</title>
+    <!-- Bootstrap -->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='plugins/bootstrap/bootstrap.min.css') }}">
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/smokerstyle.css') }}" media="screen" />
+	<link rel="shortcut icon" href="{{ url_for('static', filename='assets/favicon.ico') }}" type="image/x-icon">
+	<link rel="icon" href="{{ url_for('static', filename='assets/favicon.ico') }}" type="image/x-icon">
+</head>
+<body>
+	<!-- header -->
+	<header class="banner overlay bg-cover" data-background="{{ url_for('static', filename='images/medical.jpg') }}">
+		
+		<!-- banner -->
+		<div class="container section">
+			<div class="row">
+				<div class="col-lg-8 text-center mx-auto">
+					<h1 class="text-white mb-3">General Practice Smoking-status Assessment and Referral Tool (GP-SmART)</h1>
+			
+
+				</div>
+			</div>
+		</div>
+
+	</header>
+    <section id="section1">
+        <h2>Patient is a heavy smoker</h2>
+       <p style="text-align: left;"> GP-SmART has predicted the patient is likely a heavy smoker. Nicotine replacement therapy (NRT) may be indicated for the patient. The choice of pharmacotherapy may depend on a number of factors, including the patient's preferences, medical history, and contraindications to certain medications. Commonly used medications for smoking cessation include nicotine replacement therapy (NRT), bupropion, and varenicline.</p>
+		<p>According to the <a href="https://amhonline.amh.net.au/auth">Australian Medicines Handbook</a>, the following are prescription options for a GP to give a patient presenting with heavy smoking addiction.</p>	
+	   <h4>Pharmacotherapy options for heavy smoking cessation:</h4>
+		<ul>
+			<li class="left-align"><b>Varenicline (brand name Champix)</b> - Varenicline is a prescription medication that works by blocking the effects of nicotine on the brain, reducing cravings and withdrawal symptoms. It is typically taken for 12 weeks, and may be continued for an additional 12 weeks for those who successfully quit smoking. Varenicline has been shown to be more effective than placebo or other pharmacotherapy options for smoking cessation, and is generally well-tolerated. However, it has been associated with some side effects, including nausea, headache, and insomnia.</li>
+			<li class="left-align"><b>Bupropion (brand name Zyban)</b> - Bupropion is a prescription medication that is typically used as an antidepressant, but has also been found to be effective for smoking cessation. Bupropion works by reducing cravings and withdrawal symptoms, and is typically taken for 7 to 12 weeks. Bupropion has been shown to be more effective than placebo for smoking cessation, but is generally less effective than varenicline. Bupropion may also be associated with some side effects, including dry mouth, insomnia, and agitation.</li>
+		</ul>
+		 <p style="text-align: left;">It is important to note that behavioral support and counseling, as well as lifestyle modifications, can also be important components of a comprehensive smoking cessation program.</p>
+		 <button type="button" class="btn btn-primary btn-lg" onclick="window.location.href='/'" style="display: block; margin: 0 auto;">Back to GP-SmART</button>
+		</section>
+
+	<!-- ** JS Plugins Needed for the Project ** -->
+	<!-- jquiry -->
+	<script type="text/javascript" src="{{url_for('static', filename='plugins/jquery/jquery-1.12.4.js') }}"></script>
+	<!-- Bootstrap JS -->
+	<script type="text/javascript" src="{{url_for('static', filename='plugins/bootstrap/bootstrap.min.js') }}"></script>
+
+    <!-- Our JS -->
+    <script type="text/javascript" src="{{url_for('static', filename='js/smoker.js') }}"></script>
+
+
+</body>
+</html>
