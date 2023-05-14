@@ -1,0 +1,13 @@
+flask
+pandas
+numpy
+matplotlib
+seaborn
+sklearn
+xgboost
+plotly
+dash
+jinja2
+joblib
+requests
+webbrowser
