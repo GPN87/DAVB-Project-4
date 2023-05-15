@@ -14,6 +14,7 @@ import plotly.express as px
 import plotly.graph_objs as go
 import pandas as pd
 from flask import session
+import sys
 
 #Read data from CSV
 df = pd.read_csv('data/visualisation.csv')
@@ -108,6 +109,7 @@ def non_smoker():
         abort(404)  # User's input not found in session variable
 
     x_feature = 'Hemoglobin Levels'
+
     y_feature = 'Systolic Blood Pressure'
     x = df2['hemoglobin']
     y = df2['systolic']
@@ -139,16 +141,21 @@ def result():
     input_features = [float(request.form[feature]) for feature in features]
 
     y_prob = model.predict_proba([input_features])[0][1]
-    y_cat = categories[np.digitize(y_prob, [0.0, 0.4, 0.7, 1.0]) - 1]
+    y_cat = categories[np.digitize(y_prob, [0.0, 0.4, 0.65, 1.0]) - 1]
 
     session['user_input'] = input_features
+    print("y_prob value:", y_prob)
+    print("y_cat value:", y_cat)
 
-    if y_cat == 0:
+    sys.stdout.flush()  # Flush the output to ensure it appears in the terminal immediately
+
+
+    if y_prob <= 0.39:
         return redirect(url_for('non_smoker'))
-    elif y_cat == 1:
-        return redirect(url_for('casual_smoker'))
-    else:
+    elif y_prob >= 0.7:
         return redirect(url_for('heavy_smoker'))
+    else:
+        return redirect(url_for('casual_smoker'))
 
 if __name__ == '__main__':
     app.run(debug=True)
