@@ -139,7 +139,7 @@ def result():
     input_features = [float(request.form[feature]) for feature in features]
 
     y_prob = model.predict_proba([input_features])[0][1]
-    y_cat = categories[np.digitize(y_prob, [0.0, 0.4, 0.525, 1.0]) - 1]
+    y_cat = categories[np.digitize(y_prob, [0.0, 0.4, 0.7, 1.0]) - 1]
 
     session['user_input'] = input_features
 
