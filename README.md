@@ -12,6 +12,8 @@
 
 - Navigate to and run ```app.py``` and run the ```http://127.0.0.1:5000/``` hyperlink in your browser to access the local host server.
 
+- To instantiate the model that predicts smoking status, run ```smoking5.ipynb``` in full before submitting a prediction. This will dump the model into a joblib file in the root directory.
+
 ## Overview
 The code at ```app.py``` deploys a web-based screening tool that predicts the smoking status of patients in a primary healthcare setting. The application uses an gradient boosting machine learning algorithm that classifies input data into three categories: ```non-smoker``` , ```casual-smoker``` or ```heavy-smoker.```
 
