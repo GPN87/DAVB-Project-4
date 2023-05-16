@@ -36,7 +36,13 @@ GP-SmART also contains a dash-built dashboard that allows the GP to explore the 
 ![dash](static/screenshots/dash.png)
 
 ## Pre-processing and model selection
-Several supervised machine learning were tested for accuracy as part of the pre-processing step. The relative accuracy is shown below.
+- The notebook entitled ```smoking5.ipynb``` details the exploratory and pre-processing work done to the raw data in ```smoking.csv```
+
+- Scaling was employed to the dataset to account for the various measurement scales present in the raw data.
+
+- Accuracy testing revealed much higher f1 scores predicting '0's or 'non-smoking.' This has been found to be due to the lopsided nature of the data. For this reason, random_oversampling techniques were used.
+
+- Several supervised machine learning algorithms were tested for accuracy as part of the pre-processing step. The relative accuracy is shown below.
 
 ![accuracy](static/screenshots/model.png)
 
