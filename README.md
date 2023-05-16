@@ -48,4 +48,6 @@ GP-SmART also contains a dash-built dashboard that allows the GP to explore the 
 
 ![accuracy](static/screenshots/model.png)
 
+### Please refer to: /TN-Folder/smoking5.ipynb for the Machine learning notebook code.
+
 
